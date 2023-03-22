@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[Quote] (
-    [Id]        INT           IDENTITY (1, 1) NOT NULL,
+    [Id]        INT      PRIMARY KEY     IDENTITY (1, 1) NOT NULL,
 	[Guid] UNIQUEIDENTIFIER NOT NULL UNIQUE, 
-    [Content]   VARCHAR (250) NOT NULL,
+    [Content]   VARCHAR (250) NOT NULL UNIQUE,
     [Quotee]    VARCHAR (50)  NOT NULL,
-    [DateAdded] DATETIME      NOT NULL,    
-    PRIMARY KEY CLUSTERED ([Id] ASC)
+    [DateAdded] DATETIME DEFAULT GETUTCDATE() NOT NULL  
+    
 );
 

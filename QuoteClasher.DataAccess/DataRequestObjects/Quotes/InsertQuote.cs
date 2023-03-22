@@ -7,19 +7,17 @@ namespace QuoteClasher.IDataRequest.DataRequestObjects.Quotes
     public class InsertQuote : GuidRequest
     {
         public InsertQuote(Guid guid, string content, string quotee) : base(guid)
-        {
-            
+        {            
             Content = content;
-            Quotee = quotee;
-            DateAdded = DateTime.Now;
+            Quotee = quotee;            
         }
 
        
         public string Content { get; set; }
         public string Quotee { get; set; }
-        public DateTime DateAdded { get; set; } = DateTime.Now;
-        public override object? GetParameters() => new { Guid, Content, Quotee, DateAdded };
-        public override string GetSql() => @"INSERT INTO Quote (Guid, Content, Quotee, DateAdded) VALUES (@Guid, @Content, @Quotee, @DateAdded);";
+        
+        public override object? GetParameters() => new { Guid, Content, Quotee};
+        public override string GetSql() => @"INSERT INTO Quote (Guid, Content, Quotee) VALUES (@Guid, @Content, @Quotee);";
 
       
     }
