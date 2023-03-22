@@ -1,4 +1,4 @@
-namespace QuoteClasher.Api
+namespace QuoteClasher.Blazor.Data
 {
     public class WeatherForecast
     {
